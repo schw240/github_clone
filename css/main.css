@@ -88,7 +88,34 @@ a {
     float: right;
 }
 
+/* SUMMARY */
+.summary {
+    
+}
+.summary__title {
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.25;
+    margin-bottom: 10px;
+}
+.summary__description {
+    font-size: 26px;
+    font-weight: 300;
+    color: #767676;
+    line-height: 1.5;
+}
 
+/* SECTION & INNER */
+.section {
+    position: relative;
+}
+.section .inner {
+    max-width: 980px;
+    margin: 0 auto;
+    /* padding이 들어갔거나 border가 들어갔을때 박스 사이즈가 변화하는것 방지 */
+    box-sizing: border-box;
+    position: relative;
+}
 
 /* HEADER */
 header {
@@ -98,11 +125,12 @@ header {
     background: #fff
 }
 header .inner {
-    max-width: 980px;
-    height: 78px;
+    /* inner 공통화 */
     /* inner 가운대 정렬 */
     /* margin: 0 auto를 사용하기 위해서는 기본적인 width 정해주어야 사용 가능 */
-    margin: 0 auto;
+    /* max-width: 980px;
+    margin: 0 auto; */
+    height: 78px;
 }
 /* .inner는 정렬용이므로 꼭 모든 속성을 다 타고 내려갈 필요는 없음 */
 header .menu-group {
@@ -183,3 +211,87 @@ header .sub-menu li a:hover {
     color: #4078c8;
 }
 
+
+/* VISUAL */
+.section--visual {
+    background-image: url("../img/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    /* 사이즈가 어떻게 되던 해당 백그라운드 전체를 커버 */
+    background-size: cover;
+}
+/* visual의 배경색을 조금 어둡게 만들기 */
+.section--visual::before {
+    content: "";
+    position: absolute;
+    /* top, left, right, bottom 모두 0으로 작성하면 section 완벽 커버 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* section 완벽하게 덮기 */
+    /* width: 100%;
+    height: 100%; */
+    background: rgba(0,0,0,.3);
+}
+.section--visual .inner {
+    /* 자주 사용하므로 공통화 */
+    /* max-width: 980px;
+    margin: 0 auto; */
+    padding: 160px 0;
+    display: flex;
+}
+/* 텍스트가 너무 커 form 약식이 밀리는 것을 해결 */
+.section--visual .summary {
+    /* 가변 영역으로 공간을 차지하게 하기 위해 flex-grow 설정 */
+    flex-grow: 1;
+    /* flex-basis가 auto인 기본값으로 되어있어서 생기는 문제 */
+    /* 0으로 설정하면 다시 쪼그라듬 */
+    flex-basis: 0;
+    /* 합쳐서 flex: 1로 표현 가능 */
+    /* flex: 1; */
+    margin-right: 90px;
+}
+.section--visual .summary__title {
+    color: #fff;
+    font-size: 54px;
+    /* 글자에 그림자 추가 text-shadow: x, y, blur, */
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .25), 
+                 0 1px 25px rgba(0, 0, 0, .75);
+}
+.section--visual .summary__description {
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .25), 
+                 0 1px 25px rgba(0, 0, 0, .75);
+}
+#sign-form {
+    width: 340px;
+    margin-top: 16px;
+}
+#sign-form li {
+    margin-bottom: 17px;
+}
+#sign-form li:last-child {
+    margin-bottom: 0;
+}
+#sign-form .input--text {
+    width: 100%;
+    height: 40px;
+}
+#sign-form .caption {
+    font-size: 12px;
+    margin-top: 5px;
+    color: rgba(255,255,255,.6);
+    line-height: 1.5;
+    text-align: center;
+}
+#sign-form [type="submit"] {
+    width: 100%;
+    height: 62px;
+    padding: 0 25px;
+    font-size: 20px;
+    /* inline-flex 요소로 인해 적용 안됨 */
+    /* text-align: center; */
+    /* justify-content를 이용해 수평정렬 */
+    justify-content: center;
+}
