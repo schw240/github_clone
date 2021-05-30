@@ -1,4 +1,72 @@
-body {
+/* COMMON */
+.body__container {
     font-family: 'Roboto', sans-serif;
-    font-size: 100px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+/* 전역 속성 - 버튼 */
+.btn {
+    height: 34px;
+    background: #eee linear-gradienr(to bottom, #fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+}
+.btn:hover::before {
+    content: "";    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.07);
+}
+.btn.btn--primary {
+    border: 1px solid #65b836;
+    color: #fff;
+    background: #55a532 linear-gradient(#91dd70, #55ae2e);
+}
+
+/* 전역 INPUT TEXT*/
+.input--text {
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* 포커스시 테두리 제거 */
+    outline: none;
+    /* inset 속성은 박스 안쪽으로 그림자 생기도록 해줌 */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    font-size: 16px;
+}
+.input--text:focus {
+    border-color: #51a7e8;
+    /* 쉼표를 통해 다중 그림자 사용 가능 */
+    /* 포커스 되어도 이전 그림자를 유지하고 싶으면 위의 inset부분 같이 사용 */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 
+                0 0 5px rgba(81, 167, 232, 0.5);
+}
+/* Vender Prefix (브라우저 업체별 접두사) */
+.input--text::-webkit-input-placeholder {
+    /* 크롬 */
+    color: #cacaca;
+}
+.input--text::-webkit-input-placeholder {
+    /* ms사 엣지, 인터넷 익스플로러 */
+    color: #cacaca;
+}
+.input--text::-moz-input-placeholder {
+    /* 모질라 */
+    color: #cacaca;
 }
