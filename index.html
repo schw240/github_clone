@@ -41,25 +41,42 @@
 </head>
 <body>
 <div class="body__container">
-    <!-- BEM 작명 규칙 
-        - 일반적인 작명
-        __ ~의 일부분
-        -- ~의 상태 -> 주로 btn 사용
-
-        <div class="container">
-            <div class="container__item"></div>
-        <div>
     
-        <div class="btn--success"></div>
-    -->
+    <!-- HEADER -->
+    <header class="section">
+        <div class="inner clearfix">
+            <!-- left -->
+            <div class="menu-group float--left">
+                <div class="logo">
+                    <a href="#">GitHub</a>
+                </div>
+                <ul class="main-menu">
+                    <li><a href="#">Personal</a></li>
+                    <li><a href="#">Open source</a></li>
+                    <li><a href="#">Business</a></li>
+                    <li><a href="#">Explore</a></li>
+                </ul>
+            </div>
 
-    <!-- 전역 버튼 설정 -->
-    <!-- <div class="btn">Hello world</div>
-    <div class="btn btn--primary">Primary</div> -->
+            <!-- right -->
+            <div class="sign-group float--right">
+                <div class="btn-group">
+                    <a href="#" class="btn sign-in">Sign in</a>
+                    <a href="#" class="btn btn--primary sign-up">Sign up</a>
+                </div>
+                <form id="search-form" method="POST" action="">
+                    <input type="text" id="search" class="input--text" placeholder="Search GitHub">
+                    <input type="submit" value="Submit">
+                </form>
+                <ul class="sub-menu">
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
 
-    <!-- 전역 INPUT TEXT -->
-    <!-- <input type="text" class="input--text" placeholder="Search GitHub"> -->
-    
+        </div>
+    </header>
 </div>
 </body>
 </html>

@@ -5,6 +5,9 @@
     font-weight: 400;
     color: #333;
 }
+a {
+    text-decoration: none;
+}
 
 /* 전역 속성 - 버튼 */
 .btn {
@@ -21,6 +24,7 @@
     cursor: pointer;
     box-sizing: border-box;
     position: relative;
+    color: #333;
 }
 .btn:hover::before {
     content: "";    
@@ -70,3 +74,112 @@
     /* 모질라 */
     color: #cacaca;
 }
+
+/* FLOAT CLEARFIX */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: both;
+}
+.float--left {
+    float: left;
+}
+.float--right {
+    float: right;
+}
+
+
+
+/* HEADER */
+header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+    /* 브라우저마다 color 해석이 조금씩 다를 수 있기 때문에 hex로 작성해주는것이 좋음 */
+    background: #fff
+}
+header .inner {
+    max-width: 980px;
+    height: 78px;
+    /* inner 가운대 정렬 */
+    /* margin: 0 auto를 사용하기 위해서는 기본적인 width 정해주어야 사용 가능 */
+    margin: 0 auto;
+}
+/* .inner는 정렬용이므로 꼭 모든 속성을 다 타고 내려갈 필요는 없음 */
+header .menu-group {
+    display: flex;
+    align-items: center;
+    /* inner의 높이의 100%만큼 사용 */
+    height: 100%;
+}
+header .logo {
+    margin-right: 10px;
+}
+header .logo a {
+    background: url("../img/logo.svg");
+    width: 32px;
+    height: 32px;
+    /* 이미지도 inline요소이므로 block으로 변경해주어야 w,h 속성 적용 가능 */
+    display: block;
+    /* 로고부분에 img 태그를 이용한 것이 아닌 css를 활용하여 background로 넣어줌 */
+    /* 아때 어떤 로고를 사용했는지 알려주기 위해 a 태그의 text를 지우는 것이 아닌 text-indent를 활용하여 글자를 지워주는 방식 활용 */
+    text-indent: -9999px;
+}
+header .logo a:hover {
+    background: url("../img/logo_on.svg");
+}
+header .main-menu {
+    display: flex;
+}
+header .main-menu li a {
+    /* a태그는 기본적으로 인라인태그이므로 block로 변경 */
+    display: block;
+    /* margin-right만 주면 선택하는 창 크기가 작아지므로 */
+    /* margin-right: 10px; */
+    /* padding 이용 */
+    padding: 10px;
+    color: #3c4146;
+}
+header .main-menu li a:hover {
+    color: #4078c0;
+}
+header .sign-group {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+header .btn-group {
+    order: 2;
+    /* a태그로 인한 space를 없애주기 위해 사용 */
+    display: flex;
+}
+header .btn-group .sign-in {
+    margin-right: 4px;
+}
+/* id 선택자는 그냥 선택자만 작성하면 됌 */
+#search-form {
+    order: 1;
+    margin-right: 12px;
+}
+#search {
+    width: 160px;
+    font-size: 14px;
+}
+/* id값이 search인 요소에서 다음 형제 요소이고 type="submit"인 요소 */
+#search + [type="submit"] {
+    display: none;
+}
+header .sub-menu {
+    /* order: 0은 기본값이므로 생략 가능 */
+    display: flex;
+    margin-right: 10px;
+}
+header .sub-menu li a {
+    display: block;
+    padding: 8px;
+    font-size: 13px;
+    color: #3c4146;
+}
+header .sub-menu li a:hover {
+    color: #4078c8;
+}
+
