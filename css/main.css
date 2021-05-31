@@ -388,3 +388,76 @@ header .sub-menu li a:hover {
     box-sizing: border-box;
     /* background: red; */
 }
+
+
+/* PRICING CARD */
+.section--pricing {
+    background: linear-gradient(#f5f5f5, #fff);
+}
+.section--pricing .inner {
+    padding: 80px 0;
+}
+.section--pricing .card {
+    display: flex;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+.section--pricing .card .cell {
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section--pricing .card .cell1 .btn {
+    height: 50px;
+    font-size: 16px;
+}
+.section--pricing .card .cell2 {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    /* 글자를 가변하는 형태로 만들어주기 */
+    flex: 1;
+    border-left: 1px solid #e5e5e5;
+}
+
+
+/* FOOTER */
+footer {
+
+}
+footer .inner {
+    padding: 50px 0;
+    border-top: 1px solid #eee
+}
+footer .site-links {
+    display: flex;
+}
+footer .site-links li {
+    font-size: 12px;
+    margin-right: 10px;
+    color: #767676;
+}
+footer .site-links li a {
+    color: #4078c0;
+}
+footer .site-links li a:hover {
+    text-decoration: underline;
+}
+/* inner 안 로고 가운대 배치 */
+footer .logo {
+    position: absolute;
+    /* 아래와 같이 모든 속성 0으로 하면 전체 영역 사용한다는 의미 */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    /* 부모요소에 맞춰주기 */
+    width: 24px;
+    height: 24px;
+}
+footer .logo:hover svg {
+    fill: #4078c0;
+}
