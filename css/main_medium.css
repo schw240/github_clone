@@ -1,0 +1,130 @@
+/* header에 .section까지 선택해야 우선순위 점수가 높아져 적용됨 */
+header.section .inner {
+    max-width: none;
+    height: auto;
+    padding: 0 20px;
+}
+header .menu-group,
+header .sign-group {
+    float: none;
+}
+header .menu-group {
+    /* 로고 밑으로 쌓일 수 있도록 */
+    display: block;
+    margin-bottom: 10px;
+}
+header .main-menu {
+    /* 메뉴가 수평이 아닌 수직으로 쌓일 수 있도록 */
+    display: block;
+}
+header .main-menu li {
+    border-top: 1px solid #e5e5e5;
+}
+header .main-menu li a {
+    padding: 16px 0;
+}
+header .sign-group {
+    display: block;
+    padding: 10px 0 20px;
+    
+}
+header .btn-group {
+    display: block;
+}
+header .btn-group .btn {
+    justify-content: center;
+}
+header .btn-group .sign-in {
+    margin-right: 0;
+    margin-bottom: 12px;
+}
+#search-form {
+    margin-top: 12px;
+    margin-right: 0;
+}
+#search {
+    width: 100%;
+    height: 42px;
+    text-align: center;
+}
+header .sub-menu {
+    margin-top: 12px;
+    margin-right: 0;
+    justify-content: center;
+}
+header .logo {
+    /* 로고 크기만큼 여백줘서 헤더 크기 맞춰주기 */
+    padding: 12px 0;
+}
+
+header .toggle {
+    display: none;
+}
+header .toggle.on {
+    display: block;
+}
+#toggle-btn {
+    display: block;
+    /* 토글 기능을 미디어 쿼리에서 작성하는것은 좋은 방법이 아님 위로 따로 뺴주기 */
+}
+
+
+/* VISUAL */
+.section--visual {
+    /* 이미지 뭉개지는 부분 */
+    background-image: url("../img/bg-small.jpg");
+}
+.section--visual .inner {
+    display: block;
+    max-width: none;
+    padding: 80px 20px;
+}
+.section--visual .summary {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 50px;
+}
+#sign-form {
+    width: auto;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* FEATURE */
+.section--feature .summary {
+    padding: 66px 20px 0 20px;
+}
+.section--feature .tiles li {
+    width: 50%;
+}
+.section--feature .tiles li:nth-child(2) {
+    border-right: none;
+}
+.section--feature .tiles li img {
+    padding: 14px 30% 24px;
+}
+
+
+/* WHERE IS */
+.section--where-is .inner {
+    max-width: none;
+    padding: 80px 20px 0 20px;
+}
+
+/* PRICING CARD */
+.section--pricing .inner {
+    max-width: none;
+    padding: 80px 20px;
+}
+.section--pricing .card .cell2 {
+    font-size: 20px;
+}
+
+
+/* FOOTER */
+footer .inner {
+    padding: 50px 20px;
+}
+footer .logo {
+    display: none;
+}

@@ -38,6 +38,12 @@
     <!-- css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" media="(max-width: 1024px)" href="css/main_medium.css">
+    <link rel="stylesheet" media="(max-width: 768px)" href="css/main_small.css">
+
+    <!-- js -->
+    <!-- defer를 추가해주어야 문서를 다 읽고나서 js 해석 -->
+    <script defer src="./main.js"></script>
 </head>
 <body>
 <div class="body__container">
@@ -50,7 +56,7 @@
                 <div class="logo">
                     <a href="#">GitHub</a>
                 </div>
-                <ul class="main-menu">
+                <ul class="main-menu toggle">
                     <li><a href="#">Personal</a></li>
                     <li><a href="#">Open source</a></li>
                     <li><a href="#">Business</a></li>
@@ -59,7 +65,7 @@
             </div>
 
             <!-- right -->
-            <div class="sign-group float--right">
+            <div class="sign-group float--right toggle">
                 <div class="btn-group">
                     <a href="#" class="btn sign-in">Sign in</a>
                     <a href="#" class="btn btn--primary sign-up">Sign up</a>
@@ -74,6 +80,9 @@
                     <li><a href="#">Support</a></li>
                 </ul>
             </div>
+
+            <!-- 토글 버튼 -->
+            <div id="toggle-btn">Header Menu Toggle Button</div>
 
         </div>
     </header>
